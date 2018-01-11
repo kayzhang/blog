@@ -1,0 +1,20 @@
+{{ if and (not .IsHome) .Content }}
+{{ $section := default .Section ($.Scratch.Get "section") }}
+<li style="list-style-type:none" class="meu-extra">&nbsp;</li>
+<!--此处实现默认菜单与增加菜单之间空一行-->
+{{ with .Site.Params.githubContentURL }}
+{{ $.Scratch.Set "filePath" $.File.Path }}
+{{ if $.Params.from_Rmd }}
+{{ $.Scratch.Set "filePath" (replaceRE "[.]md$" ".Rmd" $.File.Path) }}
+{{ $.Scratch.Set "filePath" (replace ($.Scratch.Get "filePath") "\\" "/") }}
+{{ end }}
+<li><a href="{{ or $.Params.githubEditURL  (print .  ($.Scratch.Get "filePath")) }}" target="_blank">{{ default "Edit this page" (index $.Site.Params.lang.edit $section) }}</a></li>
+{{ end }}
+<!--
+注释：本文件是给非主页并且页面有内容（即非自动生成的标签分类页面）增加菜单项，此处注释掉了订阅项，应为本来已经有了或不需要。
+{{ with .Section }}
+<li><a href="/{{ . }}/index.xml" type="application/rss+xml" title="RSS feed">{{ default "Subscribe" (index $.Site.Params.lang.subscribe $section) }}</a></li>
+{{ end }}
+<li><a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="Attribution-NonCommercial-ShareAlike 4.0 International">{{ default "License" (index $.Site.Params.lang.license $section) }}</a></li>
+-->
+{{ end }}

@@ -1,0 +1,84 @@
+baseurl: "/"
+languageCode: "en-us"
+title: "Kai Zhang | 张凯"
+theme: "hugo-ivy"
+googleAnalytics: ""
+disqusShortname: ""
+ignoreFiles: ["\\.Rmd$", "_files$", "_cache$"]
+hasCJKLanguage: true
+enableEmoji: true
+footnotereturnlinkcontents: "↩"
+rssLimit: 30
+
+permalinks:
+  note: "/note/:year/:month/:slug/"
+  post: "/post/:year/:month/:slug/"
+
+menu:
+  main:
+    - name: "Home"
+      url: "/"
+      weight: 1
+    - name: "Posts"
+      url: "/post/"
+      weight: 2
+    - name: "Notes"
+      url: "/note/"
+      weight: 3
+    - name: "Categories"
+      url: "/categories/"
+      weight: 4
+    - name: "Tags"
+      url: "/tags/"
+      weight: 5
+    - name: "About"
+      url: "/about/"
+      weight: 6
+# 此处取消了订阅菜单，放到了页面底部
+#    - name: "Subscribe"
+#      url: "/index.xml"
+#      weight: 7
+
+params:
+  description: "Personal website of Kai Zhang; 张凯的个人网站"
+  footer: "&copy; [Kai Zhang](/) 2012 - 2018 | [Github](https://github.com/kayzhang) | [Twitter](https://twitter.com/kayzhang) | [Subscribe](/index.xml)"
+  disqusURL: ""
+  customJS: ["js/center-img.js", "js/right-quote.js", "js/no-highlight.js", "js/fix-footnote.js", "js/math-code.js"]
+  githubContentURL: "https://github.com/kayzhang/blog/edit/master/content/"
+
+  # options for highlight.js (version, additional languages, and theme)
+  highlightjsVersion: "9.12.0"
+  highlightjsCDN: "//cdn.bootcss.com"
+  highlightjsLang: ["r", "yaml", "tex"]
+  highlightjsTheme: "github"
+
+  logo:
+    post:
+      img: "/images/logo.png"
+      url: "/"
+      alt: "Kai Zhang"
+      tag: ""
+    note:
+      img: "/images/logo.png"
+      url: "/"
+      alt: "Kai Zhang"
+      tag: ""
+
+  author:
+    note: "Kai Zhang"
+    blog: "Kai Zhang"
+
+  lang:
+    edit:
+      post: "Edit this page"
+      note: "Edit this page"
+    license:
+      cn: "版权"
+      note: ""
+    subscribe:
+      cn: "订阅"
+      note: ""
+
+blackfriday:
+    extensionsmask: ["noIntraEmphasis"]
+    fractions: false
