@@ -58,6 +58,12 @@ Chrome 安装包会自动配置 repository，直接从官网下载 deb 包安装
 
 官方文档：[https://help.github.com/articles/set-up-git/](https://help.github.com/articles/set-up-git/)
 
+注：开了两步验证之后，必须用 token 作为密码 push，因此选择 store 而非 cache 会更加方便一点。
+
+    git config --global credential.helper store
+
+下边是之前用的 cache 方式：
+
 Set git to use the credential memory cache:
 
     git config --global credential.helper cache
