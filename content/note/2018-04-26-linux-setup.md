@@ -131,7 +131,7 @@ Change the default password cache timeout (15 minutes) to 1 hour:
 
 Atom 配置自动同步：[Sync Settings for Atom](https://atom.io/packages/sync-settings)
 
-GITHUB_TOKEN: 180fad76b58d7839a1ddfb8edd6df946c26c98ba
+GITHUB_TOKEN: d8(kai: delete this)dafa8621684fcca595b0fb423fa254b540e863
 
 GIST_ID: 24c2d067a9e79805ece05b8a26eaf0f6
 
