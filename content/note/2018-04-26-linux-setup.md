@@ -242,17 +242,11 @@ GIST_ID: 24c2d067a9e79805ece05b8a26eaf0f6
 
 安装 [gnome shell extensions](https://extensions.gnome.org/)
 
-安装扩展 `User Themes` 和 `Dash to Dock`
+安装扩展 `User Themes` 和 `Dash to Dock` 和 `Lock Keys`
 
 **> 新立得软件包管理器**
 
     sudo apt-get install synaptic
-
-**> indicator-keylock 大小写显示托盘**
-
-    sudo add-apt-repository ppa:tsbarnes/indicator-keylock
-    sudo apt-get update
-    sudo apt-get install indicator-keylock
 
 **> Ubuntu 额外的版权受限程序**
 
