@@ -77,9 +77,9 @@ Change the default password cache timeout (15 minutes) to 1 hour:
 
     sudo apt-get install vim
 
-直接把 */usr/share/vim..../vim6.3/* 下的 `vimrc.sample` 拷到主目录下并改名 `.vimrc` 来保存配置信息。
+直接把 */usr/share/vim..../vimxx/* 下的 `vimrc_example.vim` 拷到主目录下并改名 `.vimrc` 来保存配置信息。
 
-    cp /usr/share/vim/vim63/vimrc_example.vim ~/.vimrc
+    cp /usr/share/vim/vimxx/vimrc_example.vim ~/.vimrc
 
 在文件结尾添加以下设置
 
@@ -104,7 +104,7 @@ Change the default password cache timeout (15 minutes) to 1 hour:
 
     sudo apt-get install emacs25
 
-在主目录下建立配置文件 *~/.emscs*，并添加以下内容
+在主目录下建立配置文件 *~/.emacs*，并添加以下内容
 
     ;; emacs配置信息
     ;; 取消自动备份
@@ -118,9 +118,11 @@ Change the default password cache timeout (15 minutes) to 1 hour:
 
 官方指南：[Linux Package Manager Repositories](https://www.sublimetext.com/docs/3/linux_repositories.html#apt)
 
+注：https 地址貌似用不了，改称 http 即可。
+
     wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
     sudo apt-get install apt-transport-https
-    echo "deb https://download.sublimetext.com/ apt/dev/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+    echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
     sudo apt-get update
     sudo apt-get install sublime-text
 
@@ -130,6 +132,8 @@ Change the default password cache timeout (15 minutes) to 1 hour:
 
 官方指南：[Installing Atom on Linux](https://flight-manual.atom.io/getting-started/sections/installing-atom/#platform-linux)
 
+注：https 地址貌似用不了，改称 http 即可。
+
     curl -L https://packagecloud.io/AtomEditor/atom/gpgkey | sudo apt-key add -
     sudo sh -c 'echo "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main" > /etc/apt/sources.list.d/atom.list'
     sudo apt-get update
@@ -137,9 +141,18 @@ Change the default password cache timeout (15 minutes) to 1 hour:
 
 Atom 配置自动同步：[Sync Settings for Atom](https://atom.io/packages/sync-settings)
 
+安装 `sync-settings`
+
 GITHUB_TOKEN: d8(kai: delete this)dafa8621684fcca595b0fb423fa254b540e863
 
 GIST_ID: 24c2d067a9e79805ece05b8a26eaf0f6
+
+## Python
+在 Ubuntu 18.04 中默认安装的 python3，但是有些软件需要 python2 的支持，如 Dropbox，因此就会出现 2 个 python 版本，下边是设置 python3 为默认版本的方法。
+
+    sudo update-alternatives --install /usr/bin/python python /usr/bin/python2 1
+    sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 10
+    sudo update-alternatives --config python
 
 ## Java
 **> JDK**
@@ -148,11 +161,11 @@ GIST_ID: 24c2d067a9e79805ece05b8a26eaf0f6
 
 参考 Fedora 教程：[Installing Oracle JDK on Fedora](https://fedoraproject.org/wiki/JDK_on_Fedora)
 
-1. 到 [官网](http://www.oracle.com/technetwork/java/javase/downloads/index.html) 下载压缩包 `jdk-x.x.x_linux-x64_bin.tar`
-2. 解压并将解压后的文件复制到 */usr/local/*
+1. 到 [官网](http://www.oracle.com/technetwork/java/javase/downloads/index.html) 下载压缩包 `jdk-x.x.x_linux-x64_bin.tar.gz`
+2. 解压并将解压后的文件复制到 */usr/local/java/*
 
-    sudo mkdir -p /usr/local/java
-    sudo tar zxvf ./jdk-x.x.x_linux-x64_bin.tar  -C /usr/local/java
+        sudo mkdir -p /usr/local/java
+        sudo tar zxvf ./jdk-x.x.x_linux-x64_bin.tar.gz  -C /usr/local/java
 
 3. 修改环境变量，`vim ~/.bashrc`，添加以下内容
 
@@ -161,6 +174,8 @@ GIST_ID: 24c2d067a9e79805ece05b8a26eaf0f6
         PATH=$PATH:$HOME/bin:$JAVA_HOME/bin
         export JAVA_HOME
         export PATH
+
+    注：若系统中没有预装 openjdk，那么第 4、5 步可以忽略。
 
 4. Tell the system that the new Oracle Java version is available by the following commands:
 
@@ -179,21 +194,20 @@ GIST_ID: 24c2d067a9e79805ece05b8a26eaf0f6
 7. 查看 JDK 版本：`java -version`
 
 ## 前端
-**> hugo**
 
 **> R**
 
 官方指南：[https://www.r-project.org/](https://www.r-project.org/)
 
-以下为针对 ubuntu artful，即 ubuntu 17.10 的安装方法：
+以下为针对 ubuntu artful，即 ubuntu 17.10 的安装方法，18.04 暂时可以用这一个源：
 
     sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E084DAB9
-    deb https://mirrors.tuna.tsinghua.edu.cn/CRAN/bin/linux/ubuntu artful/
-    sudo apt-get update
-    sudo apt-get install r-base
-    sudo apt-get install r-base-dev
-    
-而现在针对 bionic 18.04 的特定源还没出，可以直接从 ubuntu 的源安装：
+
+在 `/etc/apt/sources.list` 结尾添加（注意，一定不要用 https）：
+
+    deb http://mirrors.tuna.tsinghua.edu.cn/CRAN/bin/linux/ubuntu artful/
+
+之后安装
 
     sudo apt-get update
     sudo apt-get install r-base
@@ -219,6 +233,11 @@ GIST_ID: 24c2d067a9e79805ece05b8a26eaf0f6
     if (!requireNamespace("devtools")) install.packages("devtools")
     devtools::install_github("rstudio/blogdown")
 
+**> 其他需要的包**
+
+    install.packages(c("processx", "later"))
+    options(blogdown.generator.server = TRUE)
+
 **> hugo**
 
     blogdown::install_hugo()
@@ -241,6 +260,10 @@ GIST_ID: 24c2d067a9e79805ece05b8a26eaf0f6
     sudo apt-get install gnome-tweak-tool
 
 安装 [gnome shell extensions](https://extensions.gnome.org/)
+
+首先安装浏览器插件，然后安装本地支持
+
+    sudo apt-get install chrome-gnome-shell
 
 安装扩展 `User Themes` 和 `Dash to Dock` 和 `Lock Keys`
 
@@ -265,3 +288,40 @@ GIST_ID: 24c2d067a9e79805ece05b8a26eaf0f6
 官方指南：[搜狗输入法 for Linux](https://pinyin.sogou.com/linux/)
 
 注：需要用 fcitx，目前其对很多应用支持不是很好，最好妥协使用 ibus。
+
+**> Dropbox**
+
+官方指南：[安装 Dropbox](https://www.dropbox.com/install)
+
+1. 首先第一步可以通过下载官网的 deb 包安装 Dropbox 前端：
+
+        sudo dpkg -i dropbox_2015.10.28_amd64.deb
+
+    这一步，也可以通过以下命令直接安装：
+
+        sudo apt-get install nautilus-dropbox
+
+    在安装的时候可能需要安装一些依赖库，按照提示操作就行。
+
+2. 在启动器中打开 Dropbox
+
+    此时可能会刚开始没反应，之后[报错](https://askubuntu.com/questions/562018/dropbox-and-ubuntu-software-center-doesnt-work-after-setting-python3-4-as-defau?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa)，Google 之后发现是将默认 python 由 python2 设置为 python3 导致的，解决方案为：
+
+    将文件 `/usr/bin/dropbox` 中第一行的 `#!/usr/bin/python` 改为 `#!/usr/bin/python2`。
+
+3. 打开 Dropbox，下载后端程序 dameon
+
+    此时发现无法下载，提示 *Trouble connecting to Dropbox servers. Maybe your internet connection is down, or you need to set your http_proxy environment variable.*
+
+    原因在于，Dropbox 下载过程中不使用系统代理，因此选择手动安装 demeon：
+
+
+        cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -c
+
+    接着，从新建的 *.dropbox-dist* 文件夹运行 Dropbox 守护程序
+
+        ~/.dropbox-dist/dropboxd
+
+    之后在弹出的页面中登陆即可。
+
+    此时可以直接启动器启动，但是有一个问题就是终端打开 `~/.dropbox-dist/dropboxd` 可以使用系统代理，而启动器打开不能使用，只需在 Dropbox 的设置里边把代理服务器配置一下就行了。
