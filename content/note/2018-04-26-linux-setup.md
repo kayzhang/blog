@@ -18,6 +18,36 @@ tags:
 
     sudo passwd root
 
+**> 安装 oh-my-zsh**
+
+官方指南：[oh-my-bash](https://github.com/robbyrussell/oh-my-zsh)
+
+1. 安装 zsh
+
+        sudo apt install zsh
+
+    通过 `zsh --version` 查看版本
+
+2. 设置 zsh 为默认 shell
+
+    首先通过 `echo $SHELL` 查看默认 shell，结果为 `/bin/bash`；`$SHELL --version` 结果为 `GNU bash, version 4.4.19(1)-release (x86_64-pc-linux-gnu)`。
+
+    然后确认 zsh 在 shell 列表 */etc/shells* 里边，之后设置默认 shell 为 zsh：
+
+        chsh -s $(which zsh)
+
+    注销账户之后，查看 `echo $SHELL` 结果为 `/usr/bin/zsh`；`$SHELL --version` 结果为 `zsh 5.4.2 (x86_64-ubuntu-linux-gnu)`。
+
+3. 安装 oh-my-zsh
+
+    通过 curl 安装：
+
+        sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+    或通过 wget 安装：
+
+        sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+
 **> 在设置中安装中文支持环境**
 
 **> 安装 ibus-libpinyin 拼音输入法**
