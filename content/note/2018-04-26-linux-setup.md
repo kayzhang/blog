@@ -297,6 +297,22 @@ GIST_ID: 24c2d067a9e79805ece05b8a26eaf0f6
 
 安装扩展 `User Themes` 和 `Dash to Dock` 和 `Lock Keys`
 
+**> Albert**
+
+官方指南：[Installing Albert](https://albertlauncher.github.io/docs/installing/)
+
+以下针对 Ubuntu 18.04，首先是添加 key
+
+    wget -nv https://download.opensuse.org/repositories/home:manuelschneid3r/xUbuntu_18.04/Release.key -O Release.key
+    sudo apt-key add - < Release.key
+    sudo apt-get update
+
+然后安装 Albert
+
+    sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/manuelschneid3r/xUbuntu_18.04/ /' > /etc/apt/sources.list.d/home:manuelschneid3r.list"
+    sudo apt-get update
+    sudo apt-get install albert
+
 **> 新立得软件包管理器**
 
     sudo apt-get install synaptic
