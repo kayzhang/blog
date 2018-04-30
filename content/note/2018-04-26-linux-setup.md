@@ -50,6 +50,10 @@ tags:
 
 **> 在设置中安装中文支持环境**
 
+**> 设置中文优先级**
+
+在安装时选择英文语言的情况下，部分汉字（如“复”）会显示不正常，只占据一半的宽度，这是因为系统默认优先显示日文汉字，之后是汉文、简体、繁体，因此要更改中文优先级为最优，具体为打开文件 `/etc/fonts/conf.avail/64-language-selector-prefer.conf` 将相应部分更改为 SC-->TC-->JP-->KR 的顺序，然后注销一下即可。
+
 **> 安装 ibus-libpinyin 拼音输入法**
 
     sudo apt-get install ibus-libpinyin
