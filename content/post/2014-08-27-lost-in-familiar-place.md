@@ -6,7 +6,6 @@ slug: lost-in-familiar-place
 categories:
   - Life
 tags:
-  - 
 ---
 
 ![几米/地下铁](http://i.imgur.com/ELnMcgF.jpg "几米/地下铁")

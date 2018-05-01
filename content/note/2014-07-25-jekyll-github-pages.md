@@ -7,7 +7,6 @@ categories:
   - Setup
   - Front End
 tags:
-  - 
 ---
 
 ## 安装Ruby

@@ -6,7 +6,6 @@ slug: city-bed-vs-town-house
 categories:
   - Life
 tags:
-  - 
 ---
 
 最近一直在看《奇葩说》，其中一个辩题是 [“大城床小城房你选哪个？”](http://www.iqiyi.com/v_19rro4b37s.html)

@@ -6,7 +6,6 @@ slug: interest-and-job
 categories:
   - Life
 tags:
-  - 
 ---
 
 ![hard-working](http://i.imgur.com/MgdMqCU.jpg "hard-working")
