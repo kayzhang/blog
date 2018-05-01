@@ -54,7 +54,7 @@ public class testOverride {
         Object obj = new Object();
         Animal ani = new Dog();
         Dog dog = new Dog();
-          
+
         // Animal.run(Object obj), not Dog.run(Dog dog)
         // Animal.run(Object obj) 并未被 Dog.run(Dog dog) 重写，动态方法查找失效，直接调用父类方法，且遵循向上转型就近匹配原则
         ani.run(dog);
@@ -80,3 +80,11 @@ public class testOverride {
 3. dog.run(obj): dog 是子类引用变量，直接调用子类函数域内的函数，此时同名方法有3 个，即从父类那里继承的 2 个，和子类中增加的 1 个，这三个函数在子类函数域内是重载函数，根据向上转型最近匹配原则进行选择，执行 Animal.run(Object obj)。
 4. dog.run("string"): 同上，执行 Animal.run(String str)。
 5. dog.run(dog): 同上，执行 Dog.run(Dog dog)。
+
+运行结果如下：
+
+    Animal.run(Object obj)
+    Animal.run(String str)
+    Animal.run(Object obj)
+    Animal.run(String str)
+    Dog.run(Dog dog)
