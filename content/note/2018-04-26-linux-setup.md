@@ -48,6 +48,8 @@ tags:
 
         sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 
+    **注意：**安装 JDK 时只在 `~/.bashrc` 中添加了环境变量，则 zsh 无法找到 JDK，因此要将环境变量的设置代码同时加在文件 `~/.zshrc` 的结尾。
+
 **> 在设置中安装中文支持环境**
 
 **> 设置中文优先级**
