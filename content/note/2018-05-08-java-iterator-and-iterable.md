@@ -1,5 +1,5 @@
 ---
-title: Java 迭代器 - Iterator and Iterable interface
+title: Java - Iterator and Iterable interface
 subtitle: Iterable 与 Iterable 的区别与合作
 date: '2018-05-08'
 slug: java-iterator-and-iterable
