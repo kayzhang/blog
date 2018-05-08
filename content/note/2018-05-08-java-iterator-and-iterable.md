@@ -56,7 +56,7 @@ public interface Iterator<E> {
 虽然 Iterator 接口定义了迭代器的操作方法，但是单单通过实现该接口无法满足我们对迭代器的要求，因此需要引入接口 Iterable。
 
 ### 2. Iterable
-'java.lang.Iterable' 的源码如下：
+`java.lang.Iterable` 的源码如下：
 
 ```java
 package java.lang;
