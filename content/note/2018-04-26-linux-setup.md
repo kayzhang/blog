@@ -60,6 +60,17 @@ tags:
 
     sudo apt-get install ibus-libpinyin
 
+**> 安装搜狗输入法
+
+注意：不要登录个人中心，否则重启之后候选词列表会出现乱码。若登录导致出现乱码，可以通过一下删除以下文件恢复未登录状态：
+
+    cd ~/.config
+    rm -r Sogou*
+
+**> 安装 google 输入法
+
+    sudo apt-get install fcitx-googlepinyin
+
 **> 更新软件**
 
 首先更改软件源，然后更新源
@@ -123,7 +134,7 @@ Change the default password cache timeout (15 minutes) to 1 hour:
     set nu             "打开行号
 
 取消自动生成备份文件，找到以下代码
-  
+
     if has("vms")
     set nobackup " do not keep a backup file, use versions instead
     else
@@ -289,7 +300,7 @@ GIST_ID: 24c2d067a9e79805ece05b8a26eaf0f6
 查看 hugo 版本，最新版本：[https://github.com/gohugoio/hugo/releases](https://github.com/gohugoio/hugo/releases)
 
     blogdown::hugo_version()
-    
+
 # 其他配置
 **> gnome-tweak-tool**
 
