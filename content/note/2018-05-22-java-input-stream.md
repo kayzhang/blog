@@ -1,5 +1,5 @@
 ---
-title: What's exactly is System.in?
+title: What exactly is System.in?
 subtitle: Java input stream
 date: '2018-05-22'
 slug: java-input-stream
