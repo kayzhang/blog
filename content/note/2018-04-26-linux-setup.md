@@ -60,14 +60,14 @@ tags:
 
     sudo apt-get install ibus-libpinyin
 
-**> 安装搜狗输入法
+**> 安装搜狗输入法**
 
 注意：不要登录个人中心，否则重启之后候选词列表会出现乱码。若登录导致出现乱码，可以通过一下删除以下文件恢复未登录状态：
 
     cd ~/.config
     rm -r Sogou*
 
-**> 安装 google 输入法
+**> 安装 google 输入法**
 
     sudo apt-get install fcitx-googlepinyin
 
