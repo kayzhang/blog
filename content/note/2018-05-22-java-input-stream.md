@@ -139,7 +139,7 @@ public class myBufferedInputStream {
 ➜  algs
 ```
 
-# BufferedInputStream 与 FileInputStream 的对比
+# BufferedInputStream 与 FileInputStream 对比
 参考：[Why is using BufferedInputStream to read a file byte by byte faster than using FileInputStream?](https://stackoverflow.com/questions/18600331/why-is-using-bufferedinputstream-to-read-a-file-byte-by-byte-faster-than-using-f)
 
 在 FileInputStream 中，read() 方法每次读取一个字节，源码为：
