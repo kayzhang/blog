@@ -11,7 +11,7 @@ tags:
 
 在学习朴素贝叶斯的过程中，下面的几篇文章写的比较好，特记录于此。
 
-[数学之美番外篇：平凡而又神奇的贝叶斯方法](http://mindhacks.cn/2008/09/21/the-magical-bayesian-method/)，此处用途仅为个人笔记。
+[数学之美番外篇：平凡而又神奇的贝叶斯方法](http://mindhacks.cn/2008/09/21/the-magical-bayesian-method/)
 
 [先验概率、似然函数与后验概率](https://www.cnblogs.com/wjgaas/p/4523779.html)
 
