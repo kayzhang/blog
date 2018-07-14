@@ -62,6 +62,12 @@ tags:
 
 **> 安装搜狗输入法**
 
+官方指南：[搜狗输入法 for Linux](https://pinyin.sogou.com/linux/)
+
+    sudo apt-get install fcitx
+
+    dpkg -i install sogoupinyin_2.2.0.0108_amd64.deb
+
 注意：不要登录个人中心，否则重启之后候选词列表会出现乱码。若登录导致出现乱码，可以通过一下删除以下文件恢复未登录状态：
 
     cd ~/.config
@@ -165,7 +171,7 @@ Change the default password cache timeout (15 minutes) to 1 hour:
 
 官方指南：[Linux Package Manager Repositories](https://www.sublimetext.com/docs/3/linux_repositories.html#apt)
 
-注：https 地址貌似用不了，改称 http 即可。
+注：https 地址貌似用不了，改成 http 即可。
 
     wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
     sudo apt-get install apt-transport-https
@@ -179,7 +185,7 @@ Change the default password cache timeout (15 minutes) to 1 hour:
 
 官方指南：[Installing Atom on Linux](https://flight-manual.atom.io/getting-started/sections/installing-atom/#platform-linux)
 
-注：https 地址貌似用不了，改称 http 即可。
+注：https 地址貌似用不了，改成 http 即可。
 
     curl -L https://packagecloud.io/AtomEditor/atom/gpgkey | sudo apt-key add -
     sudo sh -c 'echo "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main" > /etc/apt/sources.list.d/atom.list'
@@ -330,6 +336,12 @@ GIST_ID: 24c2d067a9e79805ece05b8a26eaf0f6
     sudo apt-get update
     sudo apt-get install albert
 
+**> Transmissionbt**
+
+    sudo add-apt-repository ppa:transmissionbt/ppa
+    sudo apt-get update
+    sudo apt-get install transmission
+
 **> 新立得软件包管理器**
 
     sudo apt-get install synaptic
@@ -346,11 +358,8 @@ GIST_ID: 24c2d067a9e79805ece05b8a26eaf0f6
     sudo apt-get update
     sudo apt-get install smplayer smplayer-themes smplayer-skins
 
-**> 搜狗输入法**
-
-官方指南：[搜狗输入法 for Linux](https://pinyin.sogou.com/linux/)
-
-注：需要用 fcitx，目前其对很多应用支持不是很好，最好妥协使用 ibus。
+[如何在 SMPlayer 中启用 mpv](http://www.smplayer.info/zh/mpv)  
+要想使用 mpv 替代 MPlayer，请打开 SMPlayer 首选项 在通用选项卡中选择 mpv 作为多媒体引擎。
 
 **> Dropbox**
 
@@ -379,7 +388,7 @@ GIST_ID: 24c2d067a9e79805ece05b8a26eaf0f6
     原因在于，Dropbox 下载过程中不使用系统代理，因此选择手动安装 demeon：
 
 
-        cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -c
+        cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
 
     接着，从新建的 *.dropbox-dist* 文件夹运行 Dropbox 守护程序
 
@@ -388,3 +397,25 @@ GIST_ID: 24c2d067a9e79805ece05b8a26eaf0f6
     之后在弹出的页面中登陆即可。
 
     此时可以直接启动器启动，但是有一个问题就是终端打开 `~/.dropbox-dist/dropboxd` 可以使用系统代理，而启动器打开不能使用，只需在 Dropbox 的设置里边把代理服务器配置一下就行了。
+
+**> 网易云音乐**
+
+注意，官方版本太久未更新，不要用，从以下链接下载：http://archive.ubuntukylin.com/ubuntukylin/pool/main/n/netease-cloud-music/
+
+**> Kazam**
+
+录屏软件，1.5.3 版本加入了摄像头支持，但是在 18.04 上无法调用摄像头，可以装旧版 1.4.5：
+
+    sudo apt-get install kazam
+
+**> SimpleScreenRecorder**
+
+录屏软件，比 Kazam 定制性更强：
+
+    sudo apt-get install simplescreenrecorder
+
+**> Guvcview**
+
+摄像头录制软件
+
+    sudo add-apt install guvcview
