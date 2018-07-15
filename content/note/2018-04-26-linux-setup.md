@@ -419,3 +419,12 @@ GIST_ID: 24c2d067a9e79805ece05b8a26eaf0f6
 摄像头录制软件
 
     sudo add-apt install guvcview
+
+**> Shadowsocks Qt5**
+
+    sudo add-apt-repository ppa:hzwhuang/ss-qt5
+
+最新只更新到 17.10 Artful，需要去软件中心将源由 bionic 更改为 artful，然后安装即可：
+
+    sudo apt-get update
+    sudo apt-get install shadowsocks-qt5
