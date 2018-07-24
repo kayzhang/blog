@@ -50,6 +50,10 @@ tags:
 
     **注意：**安装 JDK 时只在 `~/.bashrc` 中添加了环境变量，则 zsh 无法找到 JDK，因此要将环境变量的设置代码同时加在文件 `~/.zshrc` 的结尾。
 
+**> 安装 Guake 下拉式终端**
+
+    sudo apt-get install guake
+
 **> 在设置中安装中文支持环境**
 
 **> 设置中文优先级**
@@ -322,11 +326,11 @@ GIST_ID: 24c2d067a9e79805ece05b8a26eaf0f6
     conda config --set show_channel_urls yes
     conda config --show
 
-更新 conda 及所有的 packages
+更新 conda 及 Anaconda：  
+注：不要在 root 环境中使用 `conda update --all`，会导致依赖出现问题。在其他的环境中可以使用此命令进行更新所有包。
 
     conda update conda
     conda update anaconda
-    conda update --all
 
 **> 安装 TensorFlow**
 
@@ -343,7 +347,14 @@ GIST_ID: 24c2d067a9e79805ece05b8a26eaf0f6
 
 发出以下格式的命令以在 conda 环境中安装 TensorFlow：
 
-    (tensorflow)$ pip install --ignore-installed --upgrade tensorflow
+    # 注：以下为官方推荐的原生 pip 安装方式，但是会和 conda 产生冲突，导致软件出现问题。
+    # (tensorflow)$ pip install --ignore-installed --upgrade tensorflow
+    # 因此，可以选择安装 conda 的版本，虽然不受官方支持，但应该不会有大的影响。
+    (tensorflow)$ conda install tensorflow
+
+更新：
+
+    (tensorflow)$ conda update --all
 
 查看 tensorflow 版本：
 
@@ -361,10 +372,10 @@ sess = tf.Session()
 print(sess.run(hello))
 ```
 
-更新 tensorflow：
+若为 pip 方式安装的 tensorflow，则更新如下：
 
-    (tensorflow)$ pip install --upgrade pip
-    (tensorflow)$ pip install --upgrade tensorflow
+    # (tensorflow)$ pip install --upgrade pip
+    # (tensorflow)$ pip install --upgrade tensorflow
 
 安装常用的 packages：
 
@@ -376,6 +387,14 @@ print(sess.run(hello))
     (tensorflow)$ conda install pillow
     (tensorflow)$ conda install pandas
     (tensorflow)$ conda install nltk
+    (tensorflow)$ conda install opencv
+
+卸载 Anaconda：  
+参考 [Uninstalling Anaconda](https://docs.anaconda.com/anaconda/install/uninstall)
+
+    conda install anaconda-clean
+    anaconda-clean --yes
+    rm -rf ~/anaconda3
 
 # 其他配置
 **> gnome-tweak-tool**
@@ -498,3 +517,27 @@ print(sess.run(hello))
 
     sudo apt-get update
     sudo apt-get install shadowsocks-qt5
+
+**> Shotwell**
+
+参考 [PPA for Shotwell releases](https://launchpad.net/~yg-jensge/+archive/ubuntu/shotwell)
+
+    sudo add-apt-repository ppa:yg-jensge/shotwell
+    sudo apt-get update
+    sudo apt-get install shotwell
+
+**> Okular pdf 阅读器**
+
+    sudo apt-get install okular
+
+**> Spotify**
+
+    snap install spotify
+
+**> Aria2**
+
+    sudo apt-get install aria2
+
+**> Electronic WeChat**
+
+    sudo snap install electronic-wechat
