@@ -439,6 +439,12 @@ print(sess.run(hello))
 
 一些受限的音频和视频解码器
 
+**> MPV**
+
+    sudo add-apt-repository ppa:mc3man/mpv-tests
+    sudo apt-get update
+    sudo apt-get install mpv
+
 **> SMPlayer**
 
 官方指南：[Install SMPlayer for Ubuntu](https://www.smplayer.info/en/downloads)
@@ -509,6 +515,11 @@ print(sess.run(hello))
 
     sudo add-apt install guvcview
 
+**> OpenConnect (用来代替 Cisco AnyConnect)**
+
+    sudo apt-get install network-manager-openconnect
+    sudo apt-get install network-manager-openconnect-gnome
+
 **> Shadowsocks Qt5**
 
     sudo add-apt-repository ppa:hzwhuang/ss-qt5
@@ -518,6 +529,10 @@ print(sess.run(hello))
     sudo apt-get update
     sudo apt-get install shadowsocks-qt5
 
+**> 截图工具 shutter**
+
+    sudo apt-get install shutter
+
 **> Shotwell**
 
 参考 [PPA for Shotwell releases](https://launchpad.net/~yg-jensge/+archive/ubuntu/shotwell)
@@ -526,9 +541,22 @@ print(sess.run(hello))
     sudo apt-get update
     sudo apt-get install shotwell
 
+**> GIMP**
+
+参考 [GIMP](https://launchpad.net/~otto-kesselgulasch/+archive/ubuntu/gimp)
+
+    sudo add-apt-repository ppa:otto-kesselgulasch/gimp
+    sudo apt-get update
+    sudo apt-get install gimp
+
 **> Okular pdf 阅读器**
 
     sudo apt-get install okular
+
+**> PDF-Shuffler**
+
+    sudo apt update
+    sudo apt install pdfshuffler
 
 **> Spotify**
 
@@ -541,3 +569,17 @@ print(sess.run(hello))
 **> Electronic WeChat**
 
     sudo snap install electronic-wechat
+
+**> Wunderlist**
+
+参见 [wunderlistux](https://github.com/edipox/wunderlistux)  
+直接下载 deb 包用 dpkg 安装即可。
+
+**> 解决耳机白噪音的问题**
+
+终端打开 alsamixer，将 headphone mic boost 从 0 设置为非零的一个比较小的数即可，但是这样每次重启设置并未保存，需要进行一下[配置](https://lists.freedesktop.org/archives/pulseaudio-discuss/2016-January/025271.html)：
+
+将以下两个文件中的 [Element Headphone Mic Boost] 部分注释掉：
+
+/usr/share/pulseaudio/alsa-mixer/paths/analog-input-internal-mic.conf  
+/usr/share/pulseuadio/alsa-mixer/paths/analog-input-headphone-mic.conf
