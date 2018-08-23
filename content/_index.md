@@ -5,7 +5,7 @@ disable_mathjax: true
 disable_highlight: true
 ---
 
-This is Kai Zhang's personal website. I am currently a master's student in **Computer Engineering** at **Duke University**. I'm very interested in computer science, especially frond-end web development and machine learning. I'm very familiar with Java, HTML, CSS and TensorFlow. I'm studying hard to fulfill my career goal: becoming a programmer and improving people’s work efficiency and life quality through the design of advanced softwares and algorithms. Besides, I'm a big fan of [GitHub](https://github.com/kayzhang), Website and League of Legends. I like basketball and I am a huuuuuge fan of Stephen Curry.
+This is Kai Zhang's personal website. You can just call me Kai. I am currently a master's student in **Computer Engineering** at **Duke University**. I'm very interested in computer science, especially frond-end web development and machine learning. I'm very familiar with Java, HTML, CSS and TensorFlow. I'm studying hard to fulfill my career goal: becoming a programmer and improving people’s work efficiency and life quality through the design of advanced softwares and algorithms. Besides, I'm a big fan of [GitHub](https://github.com/kayzhang), Website and League of Legends. I like basketball and I am a huuuuuge fan of Stephen Curry.
 
 The website is built via the R package [**blogdown**](https://github.com/rstudio/blogdown).
 
