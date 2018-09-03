@@ -30,11 +30,11 @@ graph 的遍历有两种常用的方式：DFS (Depth-first search) 和 BFS (Brea
 public class Graph {
     // Before calling dfs(), set every "visited" flag to false; takes O(|V|) time
     public void dfs(Vertex u) {
-        u.visit();     					// Do some unspecified thing to u
-        u.visited = true;           	// Mark the vertex u visited
+        u.visit();                  // Do some unspecified thing to u
+        u.visited = true;           // Mark the vertex u visited
         for (each vertex v such that (u, v) is an edge in E) {
             if (!v.visited) {
-            dfs(v);
+                dfs(v);
             }
         }
     }
@@ -71,7 +71,7 @@ BFS 比 DFS 要复杂一些，需要引入一个 queue 来实现。
 
 ```java
 public void bfs(Vertex u) {
-    for (each vertex v in V) {      		// O(|V|) time
+    for (each vertex v in V) {          // O(|V|) time
         v.visited = false;
     }
     u.visit(null);                      // Do some unspecified thing to u
