@@ -7,7 +7,7 @@ categories:
   - Algorithms
   - Graph
 tags:
-  - Traversal
+  - traversal
 ---
 
 Reference:  
