@@ -70,5 +70,5 @@ public class Graph {
 
 O(|V| + |E|)
 
-More specificly, O(|V| + |E|) time on adjacency lists, and O(|V|^2) time on adjacency matrices.
+More specificly, O(|V| + |E|) time on adjacency lists, and O(|V|^2) time on adjacency matrices.  
 (Because for adjacency matrices, O(|V| + |E|) = O(|V| + |V|^2) = O(|V|^2).)
