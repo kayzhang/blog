@@ -106,7 +106,7 @@ Grep 和 Find 均支持 pattern matching，但二者的行为有很大的不同�
 2. 双引号 `""`
 3. 通过 `\` 来阻止 shell 对特殊字符进行解释。
 
-[![Image from Gyazo](https://i.gyazo.com/aed3c25aee5992d9db4b8fd692cda362.png)](https://gyazo.com/aed3c25aee5992d9db4b8fd692cda362)
+<img src="https://i.gyazo.com/aed3c25aee5992d9db4b8fd692cda362.png" height="50%" width="50%"/>
 
 从图中可以看出，`\` 表示的 expression 被直接传入 Grep 后是被当成 regexps 来解释的（`*` 代表重复之前的字符任意次），而非 shell glob 的规则（`*` 代表任意的字符或者字符串）。
 
@@ -119,4 +119,4 @@ Grep 和 Find 均支持 pattern matching，但二者的行为有很大的不同�
 2. 双引号 `""`
 3. 通过 `\` 来阻止 shell 对特殊字符进行解释。
 
-[![Image from Gyazo](https://i.gyazo.com/6d22e4ac06fd4f9ae3e2bc4943ee26eb.png)](https://gyazo.com/6d22e4ac06fd4f9ae3e2bc4943ee26eb)
+<img src="https://i.gyazo.com/6d22e4ac06fd4f9ae3e2bc4943ee26eb.png" height="50%" width="50%"/>
