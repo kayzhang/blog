@@ -12,7 +12,7 @@ tags:
 
 When I was working on testing a C program about power operation, something strange happened. The `power()` algorithm is as follows:
 
-```c
+```C
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -61,17 +61,17 @@ When `-2` is assigned to `x`, `x` is interpreted as a large number `4294967294 =
 
 **First**, calculate `x^2`.
 
-\begin{equation}\begin{split} x^2 = (2^32 - 2) \cdot (2^32 -2)\\\\
-&= (2^64 - 4 \cdot 2^32) + 4\\\\
+\begin{equation}\begin{split} x^2 = (2^{32} - 2) \cdot (2^{32} -2)\\\\
+&= (2^{64} - 4 \cdot 2^{32}) + 4\\\\
 \end{split}\end{equation}
 
 Because unsigned int is 32-bits, so the left part `2^64 - 4 * 2^32` will be truncated due to overflow. Therefore, the result is `power(-2, 2) == 4`.
 
 **Second**, calculate `x^3`.
 
-\begin{equation}\begin{split} x^3 = x^2 \cdot (2^32 - 2)\\\\
-&= 4 \cdot (2^32 - 2)\\\\
-&= 4 \cdot 2^32 - 8
+\begin{equation}\begin{split} x^3 = x^2 \cdot (2^{32} - 2)\\\\
+&= 4 \cdot (2^{32} - 2)\\\\
+&= 4 \cdot 2^{32} - 8
 \end{split}\end{equation}
 
 So, the left part `4 * 2^32` is truncated, and the result is `power(-2, 3) == -8`.
