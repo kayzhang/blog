@@ -9,6 +9,7 @@ categories:
 tags:
   - type conversion
 ---
+注：本文中提到的 float 或者 floating 均是指的广义的浮点数，包括 float 或者 double 等。
 
 # Important Resources
 
@@ -28,6 +29,9 @@ tags:
 # Type Conversion
 以下内容摘自： [All of Programming](https://play.google.com/store/books/details?id=-zViCgAAQBAJ)
 
+> The default type for integer constants (e.g. 2, or 46) is int.  
+> The default type for real constants (3.14, or -8.19) is double.
+>
 > When the compiler inserts a type conversion, it typically must add instructions to the program which cause the processor to explicitly change the bit representation from the size and representation used by the original type to the size and representation used by the new type.
 > 
 > ### There are four common ways that the bit representations must be changed to convert from one type to another during a type promotion.
