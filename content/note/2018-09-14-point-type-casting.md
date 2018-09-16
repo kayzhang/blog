@@ -18,12 +18,12 @@ Question:
 > 
 > We write the following (horrible) code:
 > 
-> ```c
-> double d = 3.14159;
-> int * p = (int*) &d;
-> *p = 42;
-> printf("%f\n", d);
-> ```
+```c
+double d = 3.14159;
+int * p = (int*) &d;
+*p = 42;
+printf("%f\n", d);
+```
 > 
 > What would you expect the behavior to be?
 > 
