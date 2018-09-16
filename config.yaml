@@ -44,7 +44,7 @@ params:
   footer: "&copy; [Kai Zhang](/) 2012 - 2018 | [Github](https://github.com/kayzhang) | [Twitter](https://twitter.com/kayzhang) | [Subscribe](/index.xml)"
   disqusURL: ""
   customJS: ["js/center-img.js", "js/right-quote.js", "js/no-highlight.js", "js/fix-footnote.js", "js/math-code.js"]
-  githubContentURL: "https://github.com/kayzhang/blog/edit/master/content/"
+  githubContentURL: "https://github.com/kayzhang/kaizhang.me/edit/master/content/"
 
   # options for highlight.js (version, additional languages, and theme)
   highlightjsVersion: "9.12.0"
