@@ -60,11 +60,11 @@ toc: true
 比如：
 
 ```C
-int arr1[9];				// the type of arr1 is 'int [9]'
-int arr2[10];				// the type of arr2 is 'int [10]'
-float flt1[9];				// the type of flt1 is 'float [9]'
-int arr3[10][20];			// the type of arr3 is 'int [10][20]'
-arr3[2]					// the type of arr3[2] is 'int [20]`
+int arr1[9];			// the type of arr1 is 'int [9]'
+int arr2[10];			// the type of arr2 is 'int [10]'
+float flt1[9];			// the type of flt1 is 'float [9]'
+int arr3[10][20];		// the type of arr3 is 'int [10][20]'
+arr3[2]				// the type of arr3[2] is 'int [20]`
 ```
 
 注意到，数组的数据类型包含最内层元素类型及数组大小这 2 个信息，只有当这两个信息均相同时，其数据类型才相同。数组的操作要严格按照其数据类型进行。
@@ -75,28 +75,28 @@ arr3[2]					// the type of arr3[2] is 'int [20]`
 比如：
 
 ```C
-int * ptr1;					// the type of ptr1 is 'int *'
-float * flt1; 					// the type of flt1 is 'float *'
+int * ptr1;			// the type of ptr1 is 'int *'
+float * flt1; 			// the type of flt1 is 'float *'
 
 int arr1[9];
 int arr2[10];
 float flt1[9];
 int arr3[10][20];
 
-&arr1						// the type of &arr1 is 'int (*)[9]'
-&arr2						// the type of &arr2 is 'int (*)[10]'
-&flt1						// the type of &flt1 is 'float (*)[9]'
-&arr3						// the type of &arr3 is 'int (*)[10][20]'
-&arr3[1]					// the type of &arr3[1] (which is &(arr3[1])) is 'int (*)[20]'
+&arr1				// the type of &arr1 is 'int (*)[9]'
+&arr2				// the type of &arr2 is 'int (*)[10]'
+&flt1				// the type of &flt1 is 'float (*)[9]'
+&arr3				// the type of &arr3 is 'int (*)[10][20]'
+&arr3[1]			// the type of &arr3[1] (which is &(arr3[1])) is 'int (*)[20]'
 
 // 下面的式子的 type 为相应的数组
-(&arr1)[1]					// the type of (&arr1)[1] is 'int [9]'
-						// 即指针 (&arr1 + 1) 所指向的目标的类型，等同于 *(&arr1 + 1)
-(&arr3)[1]					// the type of (&arr3)[1] is 'int [10][20]'
-						// 即指针 (&arr3 + 1) 所指向的目标的类型，等同于 *(&arr3 + 1)
-(&arr3)[1][1]					// the type of (&arr3)[1][1] is 'int [20]' 
-						// 此处用到了数组操作，此处 (&arr3)[1] 发生了向其首元素
-						// （类型为 'int [20]'）的指针的退化，等同于 *((arr3)[1] + 1
+(&arr1)[1]			// the type of (&arr1)[1] is 'int [9]'
+				// 即指针 (&arr1 + 1) 所指向的目标的类型，等同于 *(&arr1 + 1)
+(&arr3)[1]			// the type of (&arr3)[1] is 'int [10][20]'
+				// 即指针 (&arr3 + 1) 所指向的目标的类型，等同于 *(&arr3 + 1)
+(&arr3)[1][1]			// the type of (&arr3)[1][1] is 'int [20]' 
+				// 此处用到了数组操作，此处 (&arr3)[1] 发生了向其首元素
+				// （类型为 'int [20]'）的指针的退化，等同于 *((arr3)[1] + 1
 ```
 
 ## 2.2 数组和指针的相关操作
@@ -112,11 +112,11 @@ int arr2[10];
 float flt1[9];
 int arr3[10][20];
 
-&arr1						// the type of &arr1 is 'int (*)[9]'
-&arr2						// the type of &arr2 is 'int (*)[10]'
-&flt1						// the type of &flt1 is 'float (*)[9]'
-&arr3						// the type of &arr3 is 'int (*)[10][20]'
-&arr3[1]					// the type of &arr3[1] (which is &(arr3[1])) is 'int (*)[20]'
+&arr1				// the type of &arr1 is 'int (*)[9]'
+&arr2				// the type of &arr2 is 'int (*)[10]'
+&flt1				// the type of &flt1 is 'float (*)[9]'
+&arr3				// the type of &arr3 is 'int (*)[10][20]'
+&arr3[1]			// the type of &arr3[1] (which is &(arr3[1])) is 'int (*)[20]'
 ```
 
 由于 `&arr` 得到的是一个指针，因此对其的操作遵循指针操作的规则。
@@ -130,14 +130,14 @@ int arr2[10];
 float flt1[9];
 int arr3[10][20];
 
-sizeof arr1					// 36
-sizeof arr2					// 40
-sizeof flt1					// 36
-sizeof arr3					// 800
-size of arr3[5]					// 80
-sizeof (&arr1)[1]				// 36
-sizeof (&arr3)[1]				// 800
-sizeof (&arr3)[1][1]				// 80
+sizeof arr1			// 36
+sizeof arr2			// 40
+sizeof flt1			// 36
+sizeof arr3			// 800
+size of arr3[5]			// 80
+sizeof (&arr1)[1]		// 36
+sizeof (&arr3)[1]		// 800
+sizeof (&arr3)[1][1]		// 80
 ```
 
 由此，可以通过以下方式获得数组的长度：
@@ -158,19 +158,19 @@ size_t size1 = (sizeof arr) / (sizeof arr[0]);
 在对指针进行操作时，最关键的就是指针移动的步长是由“指针的类型”严格决定的！上边已经讨论过，指针的类型由 `*` 加上其所指向的目标的类型决定，因此指针的移动的步长即为其所指向的目标的类型所占的空间。
 
 ```C
-int * ptr1;					// the type of ptr1 is 'int *' --> 步长为 4-bits
-float * flt1; 					// the type of flt1 is 'float *' --> 步长为 4-bits 
+int * ptr1;			// the type of ptr1 is 'int *' --> 步长为 4-bits
+float * flt1; 			// the type of flt1 is 'float *' --> 步长为 4-bits 
 
 int arr1[9];
 int arr2[10];
 float flt1[9];
 int arr3[10][20];
 
-&arr1						// the type of &arr1 is 'int (*)[9]' --> 步长为 9 * 4 bits
-&arr2						// the type of &arr2 is 'int (*)[10]' --> 步长为 10 * 4 bits
-&flt1						// the type of &flt1 is 'float (*)[9]' --> 步长为 9 * 4 bits
-&arr3						// the type of &arr3 is 'int (*)[10][20]' --> 步长为 10 * 20 * 4 = 800 bits
-&arr3[1]					// the type of &arr3[1] (which is &(arr3[1])) is 'int (*)[20]' --> 步长为 20 * 4 = 80 bits
+&arr1				// the type of &arr1 is 'int (*)[9]' --> 步长为 9 * 4 bits
+&arr2				// the type of &arr2 is 'int (*)[10]' --> 步长为 10 * 4 bits
+&flt1				// the type of &flt1 is 'float (*)[9]' --> 步长为 9 * 4 bits
+&arr3				// the type of &arr3 is 'int (*)[10][20]' --> 步长为 10 * 20 * 4 = 800 bits
+&arr3[1]			// the type of &arr3[1] (which is &(arr3[1])) is 'int (*)[20]' --> 步长为 20 * 4 = 80 bits
 ```
 
 #### 2.2.2.2 下标操作符会被编译器自动转化为指针偏移量
