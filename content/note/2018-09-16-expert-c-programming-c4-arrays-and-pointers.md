@@ -186,19 +186,31 @@ C 编程新手最常听到的说法之一就是“数组和指针是相同的”
     char *p = "breadfruit";
     // 注：右边的字符串常量（string literal）的类型为 specified character array，
     //（string literals are not modifiable）
-    // 在此表达式中编译器自动将其转变为指向数组第一个元素，即字符 `'b'` 的指针。
+    // 在此表达式中编译器自动将其转变为指向数组第一个元素，即字符 'b' 的指针。
+    // 当且仅当字符串为 literals 时，编译器会自动在结尾补上 '01'。
+
+> 备注：上述代码中的指针 `p` 的类型为 `const char *`，因此，严格的定义应该为：
+> 
+    const char *p = "breadfruit";
+    
+> 此时，由于显式给出了 `const` 属性，更改指针 `p` 指向的字符（如 `p[i] = 'a';`）便会得到 compiler error。
+> 
+> 但是如果在定义省略掉 `const`，虽然 string literal 仍然为常量，但仍能正常编译（如果使用 `-Wwrite-strings` 参数，compiler 会给出一个 warning，其中 `-Wall` 默认不包括 `-Wwrite-strings`）。如果此时尝试修改这个 string，程序便会 crash with a *segmentation fault*。
+> 
+> 因此，要养成习惯，不省略 `const`。
 
 注意，只有对字符串常量才是如此。不能指望为浮点数之类的常量分配空间，如：
 
     float *pip = 3.141; /* 错误！无法通过编译。 */
 
-在 ASNI C 中，初始化指针时所创建的字符串常量被定义为只读。如果试图通过指针修改这个字符串的值，程序就会出现未定义的行为。在有些编译器中，字符串常量被存放在只允许读取的文本段中，以防止它被修改。
+在 ASNI C 中，初始化指针时所创建的字符串常量被定义为只读。如果试图通过指针修改这个字符串的值，程序就会出现未定义的行为。在有些编译器中，字符串常量被存放在只允许读取的文本段中（read only portion of the static data section），以防止它被修改。
 
 数组也可以用字符串常量进行初始化：
 
     char a[] = "gooseberry";
     // 注：在 literal string（类型为 specified character array）作为数组的初始化常量时，
     // 并未进行 Array to pointer conversion，仍为一个数组整体。
+    // 字符串数组在内存中的 Stack 中，可修改；而前述定义指针中的 literals 在内存的 Static Data Portion 中的 Read only Data 区域，不可修改。
 
 与指针相反，由字符串常量初始化的数组是可以修改的。其中的单个字符在以后可以改变。比如下面的语句：
 
