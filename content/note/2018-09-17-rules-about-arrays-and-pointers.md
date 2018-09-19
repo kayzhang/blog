@@ -78,10 +78,10 @@ arr3[2]				// the type of arr3[2] is 'int [20]`
 int a1;				// type of a1: 'int'
 int a2[10];			// type of a2: 'int [10]'
 int * p1;			// typre of p1: 'int *'
-int * p2[10];		// type of p2: 'int *[4]'
-					// 即元素类型为 'int *' 的指针，长度为 4 的数组
-int (* p3)[10];		// type of p3: 'int (*)[10]'
-					// 即指向类型为 'int [10]' 的数组的指针
+int * p2[10];			// type of p2: 'int *[4]'
+				// 即元素类型为 'int *' 的指针，长度为 4 的数组
+int (* p3)[10];			// type of p3: 'int (*)[10]'
+				// 即指向类型为 'int [10]' 的数组的指针
 ```
 
 此处仅简单举例，具体分析，参见 [指针的数组 VS 数组的指针](https://kaizhang.me/note/2018/09/array-of-pointers/)

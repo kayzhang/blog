@@ -25,10 +25,10 @@ toc: true
 int a1;				// type of a1: 'int'
 int a2[10];			// type of a2: 'int [10]'
 int * p1;			// typre of p1: 'int *'
-int * p2[10];		// type of p2: 'int *[4]'
-					// 即元素类型为 'int *' 的指针，长度为 4 的数组
-int (* p3)[10];		// type of p3: 'int (*)[10]'
-					// 即指向类型为 'int [10]' 的数组的指针
+int * p2[10];			// type of p2: 'int *[4]'
+				// 即元素类型为 'int *' 的指针，长度为 4 的数组
+int (* p3)[10];			// type of p3: 'int (*)[10]'
+				// 即指向类型为 'int [10]' 的数组的指针
 ```
 
 下面具体展开二者的辨析。
