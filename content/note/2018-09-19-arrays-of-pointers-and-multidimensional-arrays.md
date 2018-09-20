@@ -180,7 +180,7 @@ void test(int ** arr, size_t first, size_t second) {
 ➜  array
 ```
 
-此时可以通过 cast 强制将 ‘int [4][3]’ 的类型转换成 `int **`：
+此时可以通过 cast 强制将 `int [4][3]` 的类型转换成 `int **`：
 
 ```C
 test((int **)arr, 4, 3);
