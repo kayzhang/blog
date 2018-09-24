@@ -67,7 +67,7 @@ while ((c = fgetc(f)) != EOF) {
 2. 如果到达了文件结尾，则返回 EOF。其中，EOF 是在 stdio.h 中通过 macro 定义的 int 常量，值为 -1，即 0xFFFFFFFF。
 3. 当遇到读取错误时，返回 error 信息。
 
-因此，此处 fgetc() 为了能够返回所有的 characters（共 N = 255 个）加上一个额外的 distinct value for EOF，即总共 (N + 1 = 266) 个值，其返回值为 int 而非 char。
+因此，此处 fgetc() 为了能够返回所有的 characters（共 N = 256 个）加上一个额外的 distinct value for EOF，即总共 (N + 1 = 257) 个值，其返回值为 int 而非 char。
 
 如果我们将其返回值赋值给 char 类型变量时，会出现什么呢？
 
