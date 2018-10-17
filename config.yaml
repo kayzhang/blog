@@ -42,7 +42,7 @@ menu:
 params:
   description: "Personal website of Kai Zhang; 张凯的个人网站"
   footer: "&copy; [Kai Zhang](/) 2014 - 2018 | [Github](https://github.com/kayzhang) | [Twitter](https://twitter.com/kayzhang) | [Subscribe](/index.xml)"
-  disqusURL: "http://disqus.com/by/Kai_Zhang01"
+  disqusURL: "https://kaizhang.me/"
   customJS: ["js/center-img.js", "js/right-quote.js", "js/no-highlight.js", "js/fix-footnote.js", "js/math-code.js"]
   githubContentURL: "https://github.com/kayzhang/kaizhang.me/edit/master/content/"
 

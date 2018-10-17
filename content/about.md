@@ -3,8 +3,6 @@ title: "About"
 slug: "about"
 ---
 
-[//]: # (My name is Kai Zhang. You can know more about me on the [homepage](/) and my [**vitae**](/pdf/viate.pdf). You can also contact me at [kaiwhu@gmail.com](mailto:kaiwhu@gmail.com).）
-
 My name is Kai Zhang. You can know more about me on the [homepage](/). You can also contact me at [kaiwhu@gmail.com](mailto:kaiwhu@gmail.com).
 
 You can find me on [GitHub](https://github.com/kayzhang/). Subscribe to the RSS feed of [blog posts](../index.xml) or [all comments](https://yihui.disqus.com/latest.rss) to stay tuned. I used to provide a [guestbook](../guestbook/) page for people to leave me messages, but now I think it makes more sense just to leave comments on this page. I don't like formality, so it is not necessary to call me "Dr Xie" when you email me or introduce me to your friends. I'm a software engineer, so please don't call me professor.
