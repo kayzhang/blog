@@ -17,12 +17,12 @@ Reference:
 # Graph Presentation
 对于一个 graph: G = (V, E) 而言，有两种常用的实现方式。
 
-1. _adjacency_ _matrix_: 一个 |V|-by-|V| 的 boolean 数组，其中第 i 行第 j 列的元素表示 vertex (i, j) 是否存在。对于无向图而言，该矩阵关于主对角线对称。另外需要指出的一点是，有向图最多有 |V|^2 条边，无向图最多有 (|V|^2 + V) / 2) 条边。但在实际应用中，边数要比 Theta(|V^2|) 小得多，这种图称为稀疏图 （_sparse_）。对于稀疏图而言，adjacency matrix 显然是非常浪费的，因此引入 graph 的另一种实现方式。
-2. _adjacency_ _list_: 此方式适用于稀疏图，其并非指用一个 list，而是用一系列的 lists 来表示。每个 vertex v 对应于一个 list 来存储所有从 v 出发经一条边能够到达的其他 vertices。注意此处的 list 指的是广义的 list，数组、链表、search tree 都是可行的，比如：当节点名为数字时，可以用数组的数组来实现，即用一个长度为 |V| 的数组代表所有的节点，然后该数组的每个元素中放置一个存储该节点的所有邻节点的数组；当节点名为字符串时，可以用 hash 表来实现，即 hash 表的 key 为所有的节点名，value 为相应节点对应的邻节点组成的链表。adjacency list 消耗的总内存为 Theta(|V| + |E|)。
+1. _adjacency_ _matrix_: 一个 |V|-by-|V| 的 boolean 数组，其中第 i 行第 j 列的元素表示 vertex (i, j) 是否存在。对于无向图而言，该矩阵关于主对角线对称。另外需要指出的一点是，有向图最多有 |V|^2 条边，无向图最多有 (|V|^2 + V) / 2) 条边。但在实际应用中，边数要比 Theta(|V|^2) 小得多，这种图称为稀疏图 （_sparse_）。对于稀疏图而言，adjacency matrix 显然是非常浪费的，因此引入 graph 的另一种实现方式。
+2. _adjacency_ _list_: 此方式适用于稀疏图，其并非只用一个 list，而是用一系列的 lists 来表示。每个 vertex v 对应于一个 list 来存储所有从 v 出发经一条边能够到达的其他 vertices。注意此处的 list 指的是广义的 list，数组、链表、search tree 都是可行的，比如：当节点名为数字时，可以用数组的数组来实现，即用一个长度为 |V| 的数组代表所有的节点，然后该数组的每个元素中放置一个存储该节点的所有邻节点的数组；当节点名为字符串时，可以用 hash 表来实现，即 hash 表的 key 为所有的节点名，value 为相应节点对应的邻节点组成的链表。adjacency list 消耗的总内存为 Theta(|V| + |E|)。
 
-An adjacency list is more space- and usually time-efficient than an adjacency matrix for a sparse graph, but less efficient for a _complete_graph_.  A complete graph is a graph having every possible edge; that is, for every vertex u and every vertex v, (u, v) is an edge of the graph.
+An adjacency list is more space- and usually time-efficient than an adjacency matrix for a sparse graph, but less efficient for a *complete graph*.  A complete graph is a graph having every possible edge; that is, for every vertex u and every vertex v, (u, v) is an edge of the graph.
 # Graph Traversals
-graph 的遍历有两种常用的方式：DFS (Depth-first search) 和 BFS (Breadth-first search)。对于 undirected tree 而言，preorder traversal 和 postorder traversal 均为 DFS，而 level-order traversal 属于 BFS。而对于 graph 而言，每个节点均可以通过多种方式被访问，因此需要给每个节点添加一个标志位，即一个称为 "visited” 的 boolean field，来防止重复访问同一个节点。
+graph 的遍历有两种常用的方式：DFS (Depth-first search) 和 BFS (Breadth-first search)。对于 undirected tree 而言，preorder traversal 和 postorder traversal 均为 DFS，而 level-order traversal 属于 BFS。与 tree 不同的是， graph 的任意两个节点之间的 path 可以是不唯一的，即每个节点均可以通过多种路径被访问，因此需要给每个节点添加一个标志位，即一个称为 "visited” 的 boolean field，来防止重复访问同一个节点。
 
 ## Depth-first Search
 
@@ -120,4 +120,4 @@ public class Vertex {
 O(|V| + |E|) time on adjacency lists；  
 O(|V|^2) time on adjacency matrices.
 
-**注意：对于 unweighted graph 的 _shortest_path_problem_ 可以用 BFS 来实现，但是对于 weighted graph，则需要用 Dynamic Programming 或者其他更高阶的算法来实现。**
+**注意：对于 unweighted graph 的 *shortest path problem* 可以用 BFS 来实现，但是对于 weighted graph，则需要用 Dynamic Programming 或者其他更高阶的算法来实现。**
