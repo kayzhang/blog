@@ -92,24 +92,24 @@ C++ 代码如下：
 
 ```cpp
 int coinChange(vector<int>& coins, int amount) {
-        // DAG: Permutations Version
+    // DAG: Permutations Version
 
-        int MAX = amount + 1; // MAX means no valid solution
-        vector<int> dp(amount + 1, MAX);
+    int MAX = amount + 1; // MAX means no valid solution
+    vector<int> dp(amount + 1, MAX);
 
-        // Base case, amount = 0
-        dp[0] = 0;
+    // Base case, amount = 0
+    dp[0] = 0;
 
-        // Iterately fill in dp table.
-        for (int a = 1; a <= amount; a++) {
-            for (int i = 0; i < coins.size(); i++) {
-                if (coins[i] <= a) {
-                    dp[a] = min(dp[a], dp[a - coins[i]] + 1);
-                }
+    // Iterately fill in dp table.
+    for (int a = 1; a <= amount; a++) {
+        for (int i = 0; i < coins.size(); i++) {
+            if (coins[i] <= a) {
+                dp[a] = min(dp[a], dp[a - coins[i]] + 1);
             }
         }
-        return dp[amount] == MAX ? -1 : dp[amount];
     }
+    return dp[amount] == MAX ? -1 : dp[amount];
+}
 ```
 
 ### 2.3 两种方式的对比
