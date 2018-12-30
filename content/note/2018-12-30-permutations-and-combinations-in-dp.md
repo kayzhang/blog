@@ -1,5 +1,5 @@
 ---
-title: 背包问题中的排列与组合?
+title: 背包问题中的排列与组合
 subtitle: 两层循环的嵌套顺序的区别
 date: '2018-12-30'
 slug: permutations-and-combinations-in-dp
@@ -45,13 +45,13 @@ C++ 代码如下：
 ```cpp
 int coinChange(vector<int>& coins, int amount) {
     // Use-It-or-Lose-It: Combinations Version
-    
+
     int MAX = amount + 1; // MAX means no valid solution
     vector<int> dp(amount + 1, MAX);
-    
+
     // Base case, amount = 0
     dp[0] = 0;
-    
+
     // Iterately fill in dp table.
     for (size_t i = 0; i < coins.size(); i++) {
         for (int a = 0; a <= amount; a++) {
@@ -62,7 +62,7 @@ int coinChange(vector<int>& coins, int amount) {
             }
         }
     }
-    
+
     return dp[amount] == MAX ? -1 : dp[amount];
 }
 ```
@@ -93,13 +93,13 @@ C++ 代码如下：
 ```cpp
 int coinChange(vector<int>& coins, int amount) {
         // DAG: Permutations Version
-        
+
         int MAX = amount + 1; // MAX means no valid solution
         vector<int> dp(amount + 1, MAX);
-        
+
         // Base case, amount = 0
         dp[0] = 0;
-        
+
         // Iterately fill in dp table.
         for (int a = 1; a <= amount; a++) {
             for (int i = 0; i < coins.size(); i++) {
@@ -145,12 +145,12 @@ C++ 代码如下：
 ```cpp
 int change(int amount, vector<int>& coins) {
     // Use-It-or-Lose-It: Combinations Version
-    
+
     vector<int> dp(amount + 1, 0); // 0 means no valid solution
-    
+
     // Base case: amount = 0.
     dp[0] = 1;
-    
+
     // Iterately fill in dp table.
     for (size_t i = 0; i < coins.size(); i++) {
         for (int a = 0; a <= amount; a++) {
@@ -161,7 +161,7 @@ int change(int amount, vector<int>& coins) {
             }
         }
     }
-    
+
     return dp[amount];
 }
 ```
