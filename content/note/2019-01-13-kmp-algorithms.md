@@ -1,6 +1,6 @@
 ---
 title: 线性字符串匹配算法：KMP 算法
-subtitle: Linear String Matching Algorithm: KMP
+subtitle: Linear String Matching Algorithm
 date: '2019-01-13'
 slug: linear-string-searching-algorithms
 categories:
