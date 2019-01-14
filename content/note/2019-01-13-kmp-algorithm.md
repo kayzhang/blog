@@ -2,7 +2,7 @@
 title: 线性字符串匹配算法：KMP 算法
 subtitle: Linear String Matching Algorithm
 date: '2019-01-13'
-slug: linear-string-searching-algorithms
+slug: kmp-algorithm
 categories:
   - Algorithms
 tags:
@@ -20,12 +20,12 @@ toc: true
 # 2 KMP 算法模式匹配程度指标的引入
 注：下文中 `txt` 表示长度为 n 的原始字符串，`pat` 表示长度为 m 的模式字符串。
 
-KMP 算法对于 `txt` 的任一位置 `txt[i]` 引入了一个衡量模式匹配程度的指标，本文用 `leftMatchLen` 表示，其意义为以 `pat[0]` 开头的字符串（prefix）和以 `txt[i]` 结尾（suffix）的字符串能够匹配的最大长度。当 `leftMatchLen == m` 时，表示模式匹配成功。
+KMP 算法对于 `txt` 的任一位置 `txt[i]` 引入了一个衡量模式匹配程度的指标，本文用 `leftMatchLen` 表示，其意义为以 `pat[0]` 开头的字符串（prefix）和以 `txt[i]` 结尾的字符串（suffix）能够匹配的最大长度。当 `leftMatchLen == m` 时，表示模式匹配成功。
 
 那么问题转化为了：**如何在线性时间内遍历 `txt` 并对每一个位置 `txt[i]` 求出其相应的指标值呢？**
 
 # 3 指标值 `leftMatchLen` 的线性计算
-### 3.1 计算流程（第二匹配长度的引入）：
+## 3.1 计算流程（第二匹配长度的引入）
 * 初始化：`leftMatchLen = 0` 和 `i = 0`。
 * 遍历 `txt[i], i = 0...n-1`，求解相应的 `leftMatchLen` 值。
     * 如果继承之前的最大匹配长度 `leftMatchLen` 匹配失败，即 `txt[i] != pat[leftMatchLen]`，但是 `leftMatchLen > 0` 的话，则存在能够继承 `txt[i]` 之前的**第二匹配长度**的可能性，因此需要逐步将 `leftMatchLen` 逐步重置为其对应的第二匹配长度，直到发现继续匹配成功 `txt[i] == pat[leftMatchLen]` 或者 `leftMatchLen` 已经递减到 0 为止。
@@ -33,7 +33,7 @@ KMP 算法对于 `txt` 的任一位置 `txt[i]` 引入了一个衡量模式匹�
 
 那么怎么求第二匹配长度呢？
 
-### 3.2 最大匹配长度 `leftMatchLen` 对应的第二匹配长度的求解
+## 3.2 最大匹配长度 `leftMatchLen` 对应的第二匹配长度的求解
 由于第二匹配长度小于第一匹配长度，因此第二匹配对应于 `txt[i-leftMatchLen...i-1]` 内部（排除整体本身，因为其为第一匹配）的以 `txt[i-1]` 结尾的最大匹配。
 
 注意到，根据第一匹配长度为 `leftMatchLen` 可知 `txt[i-leftMatchLen...i-1]` 与 `pat[0...leftMatchLen-1]` 是完全一致的，因此 `txt[i-1]` 处的第二匹配等价于 `pat[leftMatchLen-1]` 处在以其自身所在字符串 `pat` 为 pattern 时的第二匹配。
@@ -61,7 +61,7 @@ KMP 算法对于 `txt` 的任一位置 `txt[i]` 引入了一个衡量模式匹�
    If the pattern is found, return the index of the start of the
    earliest match. Otherwise returned -1. If @pat is empty, return 0. */
 
-size_t KMPSearch(const string & txt, const string & pat) {
+int KMPSearch(const string & txt, const string & pat) {
     if (pat.empty()) {
         return 0;  // Immediate match
     }
@@ -97,8 +97,8 @@ vector<size_t> computeLpsTable(const string & pat) {
     vector<size_t> lps(pat.size());
 
     // Here is the key difference between 1st and 2nd longest match
-    // Instead start from index 0 as in 1st longest match, here we set
-    // lps[0] = 0, and start from index 1
+    // Instead of starting from index 0 as in 1st longest match,
+    // here we set lps[0] = 0, and start from index 1
     lps[0] = 0;
     size_t j = 0;  // The 2nd longest match length
 
@@ -135,7 +135,7 @@ vector<size_t> computeLpsTable(const string & pat) {
    If the pattern is found, return the index of the start of the
    earliest match. Otherwise returned -1. If @pat is empty, return 0. */
 
-size_t KMPSearch(const string & txt, const string & pat) {
+int KMPSearch(const string & txt, const string & pat) {
     if (pat.empty()) {
         return 0;  // Immediate match
     }
