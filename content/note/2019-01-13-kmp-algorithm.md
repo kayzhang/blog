@@ -119,13 +119,13 @@ vector<size_t> computeLpsTable(const string & pat) {
 ## 4.2 复杂度
 预处理构建 pattern 的 lps table 的复杂度为：O(m) time & O(m) space
 
-遍历求解 `txt[i]` 处的最大匹配长度的复杂度为 O(n) time & O(1) space
+遍历求解 `txt[i]` 处的向左最大匹配长度的复杂度为 O(n) time & O(1) space
 
 因此，总的复杂度为：O(m + n) time & O(m) space
 
 # 5 算法版本二：构建合成字符串 `pat$txt`
 ## 5.1 代码
-除了上述预处理 `pat` 构建 lps table 的方式之外，KMP 还有另外一种实现形式，即创建一个新的字符串 `pat$txt`，其中 `$` 不能在 `pat` 或着 `txt` 中出现，然后求解这个新的字符串对其自己的第二匹配长度数组 lps 即可。
+除了上述预处理 `pat` 构建 lps table 的方式之外，KMP 算法还有另外一种实现形式，即创建一个新的字符串 `pat$txt`，其中 `$` 不能在 `pat` 或着 `txt` 中出现，然后求解这个新的字符串对其自己的第二匹配长度数组 lps 即可。
 
 注意到，由于中间被 `$` 隔开，所以合成字符串的 `txt` 部分的第二匹配长度即为未合成时单独的 `txt` 对 `pat` 的第一匹配长度。
 
@@ -173,4 +173,4 @@ int KMPSearch(const string & txt, const string & pat) {
 ## 5.2 复杂度
 总的复杂度为：O(m + n) time & O(m + n) space
 
-因此相对于版本一，时间复杂度一致，但是空间复杂度较差。
+因此相对于版本一，时间复杂度一致，空间复杂度较差，但是代码更加简洁。

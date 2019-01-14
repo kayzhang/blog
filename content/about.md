@@ -12,13 +12,13 @@ This site is created with [Hugo](https://gohugo.io) and the theme is [hugo-ivy](
 
 # Research Experience
 
-1. Machine Learning (2018)
+1. Machine Learning & Computer Vision (2018)
     - Acquired some general methods about ML, like naive bayes, linear regression, softmax regression and neural network.
-    - Implemented Mnist classification using both softmax and neural network.
-    - Implemented CIFAR-10 classification with convolutional neural network.
-    - Implemented Image Captioning on Flickr8K.
+    - Implemented image classification on MNIST dataset using linear regression, softmax regression and neural network, and compared their performance.
+    - Built an image classification system trained on CIFAR-10 dataset with CNN under TensorFlow.
+    - Built an image captioning system trained on Flickr8K dataset with CNN under Tensorflow.
 
-1. Multi-objective Optimization of Transmission Lines Maintenance (Sept. 2015 - Aug. 2017)
+1. Multi-objective Optimization of Transmission Lines Maintenance (2017)
     - Implemented multi-objective optimization algorithms in MATLAB.
     - Compared the global searching ability and the convergence speed of several different types of multiobjective evolutionary algorithms.
     - Established objective functions and constraint conditions for maintenance of transmission lines.
@@ -38,7 +38,7 @@ to pay attention to mentally retarded children.
 
 # Skills
 Computer Languages: C, C++, Java, Python, Assembly Language, Perl  
-Software & Tools: Emacs, HTML, LaTeX, MATLAB, Linux, TensorFlowß
+Software & Tools: Emacs, HTML, LaTeX, MATLAB, Linux, TensorFlow
 
 # Hobbies
 Basketball, League of Legends, One Piece
