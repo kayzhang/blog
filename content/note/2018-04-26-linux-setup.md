@@ -52,7 +52,7 @@ tags:
 
 **> 安装 Guake 下拉式终端**
 
-    sudo apt-get install guake
+    sudo apt install guake
 
 **> 在设置中安装中文支持环境**
 
@@ -62,13 +62,13 @@ tags:
 
 **> 安装 ibus-libpinyin 拼音输入法**
 
-    sudo apt-get install ibus-libpinyin
+    sudo apt install ibus-libpinyin
 
 **> 安装搜狗输入法**
 
 官方指南：[搜狗输入法 for Linux](https://pinyin.sogou.com/linux/)
 
-    sudo apt-get install fcitx
+    sudo apt install fcitx
 
     dpkg -i install sogoupinyin_2.2.0.0108_amd64.deb
 
@@ -79,13 +79,13 @@ tags:
 
 **> 安装 google 输入法**
 
-    sudo apt-get install fcitx-googlepinyin
+    sudo apt install fcitx-googlepinyin
 
 **> 更新软件**
 
 首先更改软件源，然后更新源
 
-    sudo apt-get update
+    sudo apt update
 
 之后在软件中心进行软件更新。
 
@@ -100,7 +100,7 @@ Chrome 安装包会自动配置 repository，直接从官网下载 deb 包安装
 
 官方指南：[http://www.git-scm.com/book/zh/](http://www.git-scm.com/book/zh/) & [https://help.github.com/articles/set-up-git/](https://help.github.com/articles/set-up-git/)
 
-    sudo apt-get install git
+    sudo apt install git
 
 设置用户名和邮件
 
@@ -132,7 +132,7 @@ Change the default password cache timeout (15 minutes) to 1 hour:
 ## 编辑器
 **>	Vim**
 
-    sudo apt-get install vim
+    sudo apt install vim
 
 直接把 */usr/share/vim..../vimxx/* 下的 `vimrc_example.vim` 拷到主目录下并改名 `.vimrc` 来保存配置信息。
 
@@ -159,7 +159,7 @@ Change the default password cache timeout (15 minutes) to 1 hour:
 
 **> Emacs**
 
-    sudo apt-get install emacs25
+    sudo apt install emacs25
 
 在主目录下建立配置文件 *~/.emacs*，并添加以下内容
 
@@ -178,10 +178,10 @@ Change the default password cache timeout (15 minutes) to 1 hour:
 注：https 地址貌似用不了，改成 http 即可。
 
     wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
-    sudo apt-get install apt-transport-https
+    sudo apt install apt-transport-https
     echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
-    sudo apt-get update
-    sudo apt-get install sublime-text
+    sudo apt update
+    sudo apt install sublime-text
 
 采用 Package Control 自动配置，具体参照 [https://github.com/kayzhang/sublime-config](https://github.com/kayzhang/sublime-config)
 
@@ -193,8 +193,8 @@ Change the default password cache timeout (15 minutes) to 1 hour:
 
     curl -L https://packagecloud.io/AtomEditor/atom/gpgkey | sudo apt-key add -
     sudo sh -c 'echo "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main" > /etc/apt/sources.list.d/atom.list'
-    sudo apt-get update
-    sudo apt-get install atom-beta
+    sudo apt update
+    sudo apt install atom-beta
 
 Atom 配置自动同步：[Sync Settings for Atom](https://atom.io/packages/sync-settings)
 
@@ -212,6 +212,14 @@ GIST_ID: 24c2d067a9e79805ece05b8a26eaf0f6
     sudo update-alternatives --config python
 
 ## Java
+一个更简单的方法：
+
+    sudo add-apt-repository ppa:linuxuprising/java
+    sudo apt update
+    sudo apt install oracle-java11-installer
+
+下面为常规的安装方式：
+
 **> JDK**
 
 官方指南：[Installation of the JDK and JRE on Linux Platforms](https://docs.oracle.com/javase/10/install/installation-jdk-and-jre-linux-platforms.htm#JSJIG-GUID-79FBE4A9-4254-461E-8EA7-A02D7979A161)
@@ -265,9 +273,9 @@ GIST_ID: 24c2d067a9e79805ece05b8a26eaf0f6
 
 之后安装
 
-    sudo apt-get update
-    sudo apt-get install r-base
-    sudo apt-get install r-base-dev
+    sudo apt update
+    sudo apt install r-base
+    sudo apt install r-base-dev
 
 **> RStudio**
 
@@ -275,7 +283,7 @@ GIST_ID: 24c2d067a9e79805ece05b8a26eaf0f6
 
 安装本地 deb 包安装工具
 
-    sudo apt-get install gdebi
+    sudo apt install gdebi
 
 安装 RStudio
 
@@ -399,13 +407,13 @@ print(sess.run(hello))
 # 其他配置
 **> gnome-tweak-tool**
 
-    sudo apt-get install gnome-tweak-tool
+    sudo apt install gnome-tweak-tool
 
 安装 [gnome shell extensions](https://extensions.gnome.org/)
 
 首先安装浏览器插件，然后安装本地支持
 
-    sudo apt-get install chrome-gnome-shell
+    sudo apt install chrome-gnome-shell
 
 安装扩展 `User Themes` 和 `Dash to Dock` 和 `Lock Keys`
 
@@ -417,23 +425,23 @@ print(sess.run(hello))
 
     wget -nv https://download.opensuse.org/repositories/home:manuelschneid3r/xUbuntu_18.04/Release.key -O Release.key
     sudo apt-key add - < Release.key
-    sudo apt-get update
+    sudo apt update
 
 然后安装 Albert
 
     sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/manuelschneid3r/xUbuntu_18.04/ /' > /etc/apt/sources.list.d/home:manuelschneid3r.list"
-    sudo apt-get update
-    sudo apt-get install albert
+    sudo apt update
+    sudo apt install albert
 
 **> Transmissionbt**
 
     sudo add-apt-repository ppa:transmissionbt/ppa
-    sudo apt-get update
-    sudo apt-get install transmission
+    sudo apt update
+    sudo apt install transmission
 
 **> 新立得软件包管理器**
 
-    sudo apt-get install synaptic
+    sudo apt install synaptic
 
 **> Ubuntu 额外的版权受限程序**
 
@@ -442,16 +450,16 @@ print(sess.run(hello))
 **> MPV**
 
     sudo add-apt-repository ppa:mc3man/mpv-tests
-    sudo apt-get update
-    sudo apt-get install mpv
+    sudo apt update
+    sudo apt install mpv
 
 **> SMPlayer**
 
 官方指南：[Install SMPlayer for Ubuntu](https://www.smplayer.info/en/downloads)
 
     sudo add-apt-repository ppa:rvm/smplayer
-    sudo apt-get update
-    sudo apt-get install smplayer smplayer-themes smplayer-skins
+    sudo apt update
+    sudo apt install smplayer smplayer-themes smplayer-skins
 
 [如何在 SMPlayer 中启用 mpv](http://www.smplayer.info/zh/mpv)  
 要想使用 mpv 替代 MPlayer，请打开 SMPlayer 首选项 在通用选项卡中选择 mpv 作为多媒体引擎。
@@ -466,7 +474,7 @@ print(sess.run(hello))
 
     这一步，也可以通过以下命令直接安装：
 
-        sudo apt-get install nautilus-dropbox
+        sudo apt install nautilus-dropbox
 
     在安装的时候可能需要安装一些依赖库，按照提示操作就行。
 
@@ -501,13 +509,13 @@ print(sess.run(hello))
 
 录屏软件，1.5.3 版本加入了摄像头支持，但是在 18.04 上无法调用摄像头，可以装旧版 1.4.5：
 
-    sudo apt-get install kazam
+    sudo apt install kazam
 
 **> SimpleScreenRecorder**
 
 录屏软件，比 Kazam 定制性更强：
 
-    sudo apt-get install simplescreenrecorder
+    sudo apt install simplescreenrecorder
 
 **> Guvcview**
 
@@ -517,8 +525,8 @@ print(sess.run(hello))
 
 **> OpenConnect (用来代替 Cisco AnyConnect)**
 
-    sudo apt-get install network-manager-openconnect
-    sudo apt-get install network-manager-openconnect-gnome
+    sudo apt install network-manager-openconnect
+    sudo apt install network-manager-openconnect-gnome
 
 **> Shadowsocks Qt5**
 
@@ -526,32 +534,32 @@ print(sess.run(hello))
 
 最新只更新到 17.10 Artful，需要去软件中心将源由 bionic 更改为 artful，然后安装即可：
 
-    sudo apt-get update
-    sudo apt-get install shadowsocks-qt5
+    sudo apt update
+    sudo apt install shadowsocks-qt5
 
 **> 截图工具 shutter**
 
-    sudo apt-get install shutter
+    sudo apt install shutter
 
 **> Shotwell**
 
 参考 [PPA for Shotwell releases](https://launchpad.net/~yg-jensge/+archive/ubuntu/shotwell)
 
     sudo add-apt-repository ppa:yg-jensge/shotwell
-    sudo apt-get update
-    sudo apt-get install shotwell
+    sudo apt update
+    sudo apt install shotwell
 
 **> GIMP**
 
 参考 [GIMP](https://launchpad.net/~otto-kesselgulasch/+archive/ubuntu/gimp)
 
     sudo add-apt-repository ppa:otto-kesselgulasch/gimp
-    sudo apt-get update
-    sudo apt-get install gimp
+    sudo apt update
+    sudo apt install gimp
 
 **> Okular pdf 阅读器**
 
-    sudo apt-get install okular
+    sudo apt install okular
 
 **> PDF-Shuffler**
 
@@ -564,7 +572,7 @@ print(sess.run(hello))
 
 **> Aria2**
 
-    sudo apt-get install aria2
+    sudo apt install aria2
 
 **> Electronic WeChat**
 

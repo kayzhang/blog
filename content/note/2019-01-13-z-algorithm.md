@@ -20,13 +20,13 @@ toc: true
 # 2 Z 算法模式匹配程度指标的引入
 注：下文中 `txt` 表示长度为 n 的原始字符串，`pat` 表示长度为 m 的模式字符串。
 
-KMP 算法对于 `txt` 的任一位置 `txt[i]` 引入了一个衡量模式匹配程度的指标，本文用 `rightMatchLen` 表示，其意义为以 `pat[0]` 开头的字符串（prefix）和以 `txt[i]` 开头的字符串（prefix）能够匹配的最大长度。当 `rightMatchLen == m` 时，表示模式匹配成功。
+Z 算法对于 `txt` 的任一位置 `txt[i]` 引入了一个衡量模式匹配程度的指标，本文用 `rightMatchLen` 表示，其意义为以 `pat[0]` 开头的字符串（prefix）和以 `txt[i]` 开头的字符串（prefix）能够匹配的最大长度。当 `rightMatchLen == m` 时，表示模式匹配成功。
 
 那么问题转化为了：**如何在线性时间内遍历 `txt` 并对每一个位置 `txt[i]` 求出其相应的指标值呢？**
 
 # 3 指标值 `rightMatchLen` 的线性计算
 ## 3.1 计算流程
-首先类似于求解 Longest palindromic substring 的 [Manacher's Algorithm](https://www.geeksforgeeks.org/manachers-algorithm-linear-time-longest-palindromic-substring-part-1/) 算法，Z 算法在遍历 `txt[i]` 求解指标值的时候，保持记录 2 个值：L、R。其中 R 表示的是目前为止能够匹配到的最右侧的为止，L 为 R 对应的起始位置，即 `txt[L...R]` 与 `pat[0...R-L]` 是完全一致的。
+首先类似于求解 Longest palindromic substring 的 [Manacher's Algorithm](https://www.geeksforgeeks.org/manachers-algorithm-linear-time-longest-palindromic-substring-part-1/) 算法，Z 算法在遍历 `txt[i]` 求解指标值的时候，保持记录 2 个值：L、R。其中 R 表示的是目前为止能够匹配到的最右侧的位置，L 为 R 对应的起始位置，即 `txt[L...R]` 与 `pat[0...R-L]` 是完全一致的。
 
 与 [KMP 算法](https://kaizhang.me/note/2019/01/kmp-algorithm/) 类似，Z 算法的流程如下：
 

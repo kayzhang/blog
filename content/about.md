@@ -5,8 +5,7 @@ slug: "about"
 
 My name is Kai Zhang. You can know more about me on the [homepage](/). You can also contact me at [kaiwhu@gmail.com](mailto:kaiwhu@gmail.com).
 
-You can find me on [GitHub](https://github.com/kayzhang/). Subscribe to the RSS feed of [blog posts](../index.xml) or [all comments](https://yihui.disqus.com/latest.rss) to stay tuned. I used to provide a [guestbook](../guestbook/) page for people to leave me messages, but now I think it makes more sense just to leave comments on this page. I don't like formality, so it is not necessary to call me "Dr Xie" when you email me or introduce me to your friends. I'm a software engineer, so please don't call me professor.
-
+You can find me on [GitHub](https://github.com/kayzhang/). Subscribe to the RSS feed of [blog posts](../index.xml) or [all comments](https://yihui.disqus.com/latest.rss) to stay tuned. I used to provide a [guestbook](../guestbook/) page for people to leave me messages, but now I think it makes more sense just to leave comments on this page.
 
 This site is created with [Hugo](https://gohugo.io) and the theme is [hugo-ivy](https://github.com/yihui/hugo-ivy), a Hugo theme desiged by [Yihui](https://github.com/yihui), the author of [*blogdown*](https://github.com/rstudio/blogdown). The Markdown source files are [hosted on Github](https://github.com/kayzhang/blog). When you read the blog posts, you can navigate to the previous post by the left-arrow key or next post by right-arrow. Please hit "Edit this page" in the menu if you find any mistakes on the page to propose a correction through Github.
 
