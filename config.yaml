@@ -1,7 +1,8 @@
 baseurl: "/"
 languageCode: "en-us"
 title: "Kai Zhang | 张凯"
-theme: "hugo-ivy"
+# theme: "hugo-ivy"
+theme: "hugo-renga"
 googleAnalytics: ""
 disqusShortname: "kaizhang01"
 ignoreFiles: ["\\.Rmd$", "_files$", "_cache$"]
